@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
-const Result = (props: {age: number, name: string, email: string, phone: string, gender: string, address: string}) => {
-    const {age, name, email, phone, gender, address} = props;
+const Result = (props: {age: number, name: string, email: string, phone: string, gender: string, address: string, birthday: string}) => {
+    const {age, name, email, phone, gender, address, birthday} = props;
     const navigate = useNavigate();
 
     function handleCanVote() {
@@ -28,6 +28,7 @@ const Result = (props: {age: number, name: string, email: string, phone: string,
             <p><strong>Contact Number:</strong> {phone}</p>
             <p><strong>Gender:</strong> {gender}</p>
             <p><strong>Age:</strong> {age}</p>
+            <p><strong>Birthday:</strong> {birthday}</p>
             <p><strong>Address:</strong> {address}</p>
             <div className="button-group">
                 <button className="secondary" onClick={() => navigate('/')}>Back to Form</button>

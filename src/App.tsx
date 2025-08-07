@@ -13,6 +13,7 @@ function App() {
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
   const [address, setAddress] = useState("");
+  const [birthday, setBirthday] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
@@ -24,7 +25,7 @@ function App() {
     setPhone((form.elements.namedItem('phone') as HTMLInputElement).value);
     setGender((form.elements.namedItem('gender') as HTMLSelectElement).value);
     setAddress((form.elements.namedItem('address') as HTMLTextAreaElement).value);
-
+    setBirthday((form.elements.namedItem('birthday') as HTMLInputElement).value);
     navigate("/result");
   }
 
@@ -35,7 +36,7 @@ function App() {
     setPhone("");
     setGender("");
     setAddress("");
-
+    setBirthday("");
   }
   return (
     <div className="App">
@@ -59,6 +60,10 @@ function App() {
               <div className="form-group">
                 <label htmlFor="age">Age</label>
                 <input type="number" name="age" placeholder="Enter your age" required min="1" max="120" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="birthday">Birthday</label>
+                <input type="date" name="birthday" placeholder="Enter your birthday" required />
               </div>
               <div className="form-group">
                 <label htmlFor="gender">Gender</label>
@@ -88,6 +93,7 @@ function App() {
             phone={phone}
             gender={gender}
             address={address}
+            birthday={birthday}
           />
         } />
       </Routes>
